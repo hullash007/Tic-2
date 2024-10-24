@@ -49,3 +49,27 @@
 #game-section {
     text-align: center;
 }
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0; /* Default cell color */
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: 24px;
+    line-height: 60px; /* Center text vertically */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+.cell:hover {
+    background-color: #e0e0e0; /* Change color on hover */
+}
+
+.cell.X {
+    background-color: #ff9999; /* Color for X */
+}
+
+.cell.O {
+    background-color: #99ccff; /* Color for O */
+}
