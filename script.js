@@ -169,3 +169,36 @@ document.getElementById('login-btn').addEventListener('click', function() {
         alert('Please enter a valid email and password.');
     }
 });
+// Assuming you have a variable for the current player
+let currentPlayer = 'X'; // X starts the game
+
+// Get all the cells
+const cells = document.querySelectorAll('.cell');
+
+// Add event listeners to each cell
+cells.forEach(cell => {
+    cell.addEventListener('click', function() {
+        // Check if the cell is already clicked
+        if (cell.innerText === '') {
+            // Update the cell with the current player's symbol
+            cell.innerText = currentPlayer;
+
+            // Add class for color based on the current player
+            if (currentPlayer === 'X') {
+                cell.classList.add('X'); // Add X class for color
+                currentPlayer = 'O'; // Switch player
+            } else {
+                cell.classList.add('O'); // Add O class for color
+                currentPlayer = 'X'; // Switch player
+            }
+
+            // Call your existing function to check for a win or draw here
+            checkForWin();
+        }
+    });
+});
+
+// Function to check for a win (you should already have this)
+function checkForWin() {
+    // Your existing win checking logic goes here
+}
